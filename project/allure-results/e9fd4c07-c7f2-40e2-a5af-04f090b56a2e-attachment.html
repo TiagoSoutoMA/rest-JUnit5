@@ -1,0 +1,32 @@
+<div>POST to http://localhost:3000/produtos</div>
+
+    <h4>Body</h4>
+    <div>
+    <pre class="preformated-text">
+{
+    &quot;nome&quot;: &quot;Synergistic Granite Chair&quot;,
+    &quot;preco&quot;: 466,
+    &quot;descricao&quot;: &quot;Wooden&quot;,
+    &quot;quantidade&quot;: 56
+}    </pre>
+    </div>
+
+    <h4>Headers</h4>
+    <div>
+            <div>Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthdGhhcmluYS5zd2FuaWF3c2tpQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiYmdpMzhiNXhjdzkzczAiLCJpYXQiOjE3MjgzMTExMzgsImV4cCI6MTcyODMxMTczOH0.myCIUnZmNLwg7k2RQiErxuK51-YN778C6cEFnZC6DwQ</div>
+            <div>Accept: */*</div>
+            <div>Content-Type: application/json</div>
+    </div>
+
+
+
+    <h4>Curl</h4>
+    <div>
+        curl -v -X POST &#39;http://localhost:3000/produtos&#39; -H &#39;Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthdGhhcmluYS5zd2FuaWF3c2tpQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiYmdpMzhiNXhjdzkzczAiLCJpYXQiOjE3MjgzMTExMzgsImV4cCI6MTcyODMxMTczOH0.myCIUnZmNLwg7k2RQiErxuK51-YN778C6cEFnZC6DwQ&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;nome&quot;: &quot;Synergistic Granite Chair&quot;,
+    &quot;preco&quot;: 466,
+    &quot;descricao&quot;: &quot;Wooden&quot;,
+    &quot;quantidade&quot;: 56
+}&#39;
+    </div>
+

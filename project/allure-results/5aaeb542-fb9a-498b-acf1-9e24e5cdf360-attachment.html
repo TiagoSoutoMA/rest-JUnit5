@@ -1,0 +1,32 @@
+<div>POST to http://localhost:3000/produtos</div>
+
+    <h4>Body</h4>
+    <div>
+    <pre class="preformated-text">
+{
+    &quot;nome&quot;: &quot;Gorgeous Wooden Plate&quot;,
+    &quot;preco&quot;: 906,
+    &quot;descricao&quot;: &quot;Granite&quot;,
+    &quot;quantidade&quot;: 56
+}    </pre>
+    </div>
+
+    <h4>Headers</h4>
+    <div>
+            <div>Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hcmNlbGx1cy5zdGVockB5YWhvby5jb20iLCJwYXNzd29yZCI6Ijk4Nzh3ZjMwMGI3eHh1N3QiLCJpYXQiOjE3MjgzMTIwODQsImV4cCI6MTcyODMxMjY4NH0.DBiYij9IXPXyCMBI-vio6TXl6NEMTVx2YmfDN3qbY7M</div>
+            <div>Accept: */*</div>
+            <div>Content-Type: application/json</div>
+    </div>
+
+
+
+    <h4>Curl</h4>
+    <div>
+        curl -v -X POST &#39;http://localhost:3000/produtos&#39; -H &#39;Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hcmNlbGx1cy5zdGVockB5YWhvby5jb20iLCJwYXNzd29yZCI6Ijk4Nzh3ZjMwMGI3eHh1N3QiLCJpYXQiOjE3MjgzMTIwODQsImV4cCI6MTcyODMxMjY4NH0.DBiYij9IXPXyCMBI-vio6TXl6NEMTVx2YmfDN3qbY7M&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;nome&quot;: &quot;Gorgeous Wooden Plate&quot;,
+    &quot;preco&quot;: 906,
+    &quot;descricao&quot;: &quot;Granite&quot;,
+    &quot;quantidade&quot;: 56
+}&#39;
+    </div>
+

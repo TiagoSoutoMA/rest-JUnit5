@@ -1,0 +1,36 @@
+<div>POST to http://localhost:3000/carrinhos</div>
+
+    <h4>Body</h4>
+    <div>
+    <pre class="preformated-text">
+{
+    &quot;produtos&quot;: [
+        {
+            &quot;idProduto&quot;: &quot;Lonnie Johns&quot;,
+            &quot;quantidade&quot;: 38
+        }
+    ]
+}    </pre>
+    </div>
+
+    <h4>Headers</h4>
+    <div>
+            <div>Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuZHJlcy5iYXJ0ZWxsQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiN204c3gyOTQ5ZjIiLCJpYXQiOjE3MjgzMTc1NDksImV4cCI6MTcyODMxODE0OX0.so_moqEi_NpP9x8UdFFA49qrxl8xIV4TJtBm4Lymv9Q</div>
+            <div>Accept: */*</div>
+            <div>Content-Type: application/json</div>
+    </div>
+
+
+
+    <h4>Curl</h4>
+    <div>
+        curl -v -X POST &#39;http://localhost:3000/carrinhos&#39; -H &#39;Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuZHJlcy5iYXJ0ZWxsQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiN204c3gyOTQ5ZjIiLCJpYXQiOjE3MjgzMTc1NDksImV4cCI6MTcyODMxODE0OX0.so_moqEi_NpP9x8UdFFA49qrxl8xIV4TJtBm4Lymv9Q&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;produtos&quot;: [
+        {
+            &quot;idProduto&quot;: &quot;Lonnie Johns&quot;,
+            &quot;quantidade&quot;: 38
+        }
+    ]
+}&#39;
+    </div>
+

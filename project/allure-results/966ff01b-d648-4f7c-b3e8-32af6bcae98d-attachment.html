@@ -1,0 +1,31 @@
+<div>POST to http://localhost:3000/usuarios</div>
+
+    <h4>Body</h4>
+    <div>
+    <pre class="preformated-text">
+{
+    &quot;nome&quot;: &quot;Rodrick Carroll DVM&quot;,
+    &quot;email&quot;: &quot;kortney.weber@gmail.com&quot;,
+    &quot;password&quot;: &quot;6v4133hf&quot;,
+    &quot;administrador&quot;: &quot;&quot;
+}    </pre>
+    </div>
+
+    <h4>Headers</h4>
+    <div>
+            <div>Accept: */*</div>
+            <div>Content-Type: application/json</div>
+    </div>
+
+
+
+    <h4>Curl</h4>
+    <div>
+        curl -v -X POST &#39;http://localhost:3000/usuarios&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;nome&quot;: &quot;Rodrick Carroll DVM&quot;,
+    &quot;email&quot;: &quot;kortney.weber@gmail.com&quot;,
+    &quot;password&quot;: &quot;6v4133hf&quot;,
+    &quot;administrador&quot;: &quot;&quot;
+}&#39;
+    </div>
+
