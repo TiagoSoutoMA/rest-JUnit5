@@ -2,10 +2,13 @@ package br.com.rest.tests.products;
 
 import br.com.rest.client.LoginClient;
 import br.com.rest.client.ProdutctsClient;
+import br.com.rest.client.UsersClient;
 import br.com.rest.data.factory.LoginDataFactory;
 import br.com.rest.data.factory.ProductsDataFactory;
+import br.com.rest.data.factory.UsersDataFactory;
 import br.com.rest.model.request.LoginRequest;
 import br.com.rest.model.request.ProductsRequest;
+import br.com.rest.model.request.UsersRequest;
 import br.com.rest.model.response.ProductsResponse;
 import br.com.rest.utils.messages.ProductsMessage;
 import io.restassured.response.Response;
@@ -17,6 +20,7 @@ public class PutProductsTest {
 
     private static ProdutctsClient produtctsClient = new ProdutctsClient();
     private static LoginClient loginClient = new LoginClient();
+    private static final UsersClient usersClient = new UsersClient();
     private static ProductsRequest productsRequest;
     private ProductsResponse productsResponse;
     private static String idProduto, token;
@@ -24,7 +28,12 @@ public class PutProductsTest {
     @BeforeAll
     public static void setUp() {
 
-        LoginRequest loginRequest = LoginDataFactory.loginAdmin();
+        UsersRequest usersRequest = UsersDataFactory.createUserAdmin();
+
+        usersClient.usersPost(usersRequest);
+
+        LoginRequest loginRequest = LoginDataFactory.login(usersRequest.getEmail(), usersRequest.getPassword());
+
 
         token = loginClient.loginPost(loginRequest)
                 .then()

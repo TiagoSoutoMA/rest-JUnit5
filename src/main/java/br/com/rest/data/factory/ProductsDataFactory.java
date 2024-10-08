@@ -99,5 +99,5 @@ public class ProductsDataFactory {
     public static String empty() { return DataFaker.empty(); }
     public static String name() { return DataFaker.name(); }
 
-    public static String idProductCart() { return prop.getProperty("id"); }
+    public static String idProductCart() { return prop.getProperty("idProductCart"); }
 }

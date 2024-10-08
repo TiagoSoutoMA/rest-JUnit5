@@ -62,7 +62,7 @@ public class GetProductsTest {
         Assertions.assertAll(
                 () -> Assertions.assertEquals(HttpStatus.SC_OK, productsResponse.getStatusCode(), "Status code deve ser 200"),
                 () -> Assertions.assertFalse(productsResponse.getProdutos().isEmpty(), "A lista de produtos não deve ser vazia"),
-                () -> Assertions.assertEquals(productsResponse.getQuantidade(), productsResponse.getProdutos().size(), "A quantidade deve ser igual ao tamanho da lista"),
+                () -> Assertions.assertEquals(Integer.parseInt(productsResponse.getQuantidade()), productsResponse.getProdutos().size(), "A quantidade deve ser igual ao tamanho da lista"),
                 () -> Assertions.assertTrue(
                         productsResponse.getProdutos().stream().allMatch(product ->
                                 product.getNome() != null && !product.getNome().isEmpty() &&
@@ -94,7 +94,7 @@ public class GetProductsTest {
                 () -> Assertions.assertTrue(productsResponse.getNome() != null && !productsResponse.getNome().isEmpty()),
                 () -> Assertions.assertNotNull(productsResponse.getPreco()),
                 () -> Assertions.assertTrue(productsResponse.getDescricao() != null && !productsResponse.getDescricao().isEmpty()),
-                () -> Assertions.assertNotNull(productsResponse.getQuantidade()),
+                () -> Assertions.assertNotNull(Integer.parseInt(productsResponse.getQuantidade())),
                 () -> Assertions.assertTrue(productsResponse.get_id() != null && !productsResponse.get_id().isEmpty())
         );
     }
@@ -116,7 +116,7 @@ public class GetProductsTest {
         Assertions.assertAll(
                 () -> Assertions.assertEquals(HttpStatus.SC_OK, productsResponse.getStatusCode(), "Status code deve ser 200"),
                 () -> Assertions.assertFalse(productsResponse.getProdutos().isEmpty(), "A lista de produtos não deve ser vazia"),
-                () -> Assertions.assertEquals(productsResponse.getQuantidade(), productsResponse.getProdutos().size(), "A quantidade deve ser igual ao tamanho da lista"),
+                () -> Assertions.assertEquals(Integer.parseInt(productsResponse.getQuantidade()), productsResponse.getProdutos().size(), "A quantidade deve ser igual ao tamanho da lista"),
                 () -> Assertions.assertTrue(
                         productsResponse.getProdutos().stream().allMatch(product ->
                                 product.getNome() != null && !product.getNome().isEmpty() &&
