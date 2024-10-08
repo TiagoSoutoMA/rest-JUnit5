@@ -1,6 +1,7 @@
 package br.com.rest.tests.users;
 
 import br.com.rest.client.UsersClient;
+import br.com.rest.data.factory.BaseDataFactory;
 import br.com.rest.data.factory.UsersDataFactory;
 import br.com.rest.model.request.UsersRequest;
 import br.com.rest.model.response.UsersResponse;
@@ -57,7 +58,7 @@ public class DeleteUsersTest {
     @Tag("functional")
     public void testDeleteUserIncorrectId() {
 
-        Response response = usersClient.usersDelete(UsersDataFactory.name())
+        Response response = usersClient.usersDelete(BaseDataFactory.name())
                 .then()
                     .extract()
                         .response()
@@ -77,7 +78,7 @@ public class DeleteUsersTest {
     @Tag("functional")
     public void testDeleteUserRegisteredCart() {
 
-        Response response = usersClient.usersDelete(UsersDataFactory.idAdmin())
+        Response response = usersClient.usersDelete(BaseDataFactory.idAdminProp())
                 .then()
                     .extract()
                         .response()

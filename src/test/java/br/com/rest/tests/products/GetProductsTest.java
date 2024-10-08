@@ -2,6 +2,7 @@ package br.com.rest.tests.products;
 
 import br.com.rest.client.LoginClient;
 import br.com.rest.client.ProdutctsClient;
+import br.com.rest.data.factory.BaseDataFactory;
 import br.com.rest.data.factory.LoginDataFactory;
 import br.com.rest.data.factory.ProductsDataFactory;
 import br.com.rest.model.request.LoginRequest;
@@ -104,7 +105,7 @@ public class GetProductsTest {
     @Tag("functional")
     public void testListProductsEmptyId() {
 
-        Response response = produtctsClient.productsIdGet(ProductsDataFactory.empty())
+        Response response = produtctsClient.productsIdGet(BaseDataFactory.empty())
                 .then()
                     .extract()
                         .response()
@@ -134,7 +135,7 @@ public class GetProductsTest {
     @Tag("functional")
     public void testListProductsInvalidId() {
 
-        Response response = produtctsClient.productsIdGet(ProductsDataFactory.name())
+        Response response = produtctsClient.productsIdGet(BaseDataFactory.name())
                 .then()
                     .extract()
                         .response()

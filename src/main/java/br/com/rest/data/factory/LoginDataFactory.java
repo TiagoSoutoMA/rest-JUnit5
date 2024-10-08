@@ -1,20 +1,15 @@
 package br.com.rest.data.factory;
 
 import br.com.rest.model.request.LoginRequest;
-import br.com.rest.utils.Manipulation;
-
-import java.util.Properties;
 
 public class LoginDataFactory {
-
-    private static Properties prop = Manipulation.getProp();
 
     public static LoginRequest loginAdmin() {
 
         LoginRequest loginRequest = new LoginRequest();
 
-        loginRequest.setEmail(prop.getProperty("email"));
-        loginRequest.setPassword(prop.getProperty("password"));
+        loginRequest.setEmail(BaseDataFactory.emailProp());
+        loginRequest.setPassword(BaseDataFactory.passwordProp());
 
         return loginRequest;
     }
@@ -33,8 +28,8 @@ public class LoginDataFactory {
 
         LoginRequest loginRequest = new LoginRequest();
 
-        loginRequest.setEmail(DataFaker.email());
-        loginRequest.setPassword(DataFaker.password());
+        loginRequest.setEmail(BaseDataFactory.email());
+        loginRequest.setPassword(BaseDataFactory.password());
 
         return loginRequest;
     }
@@ -43,8 +38,8 @@ public class LoginDataFactory {
 
         LoginRequest loginRequest = new LoginRequest();
 
-        loginRequest.setEmail(DataFaker.invalidEmail());
-        loginRequest.setPassword(DataFaker.password());
+        loginRequest.setEmail(BaseDataFactory.invalidEmail());
+        loginRequest.setPassword(BaseDataFactory.password());
 
         return loginRequest;
     }
@@ -53,8 +48,8 @@ public class LoginDataFactory {
 
         LoginRequest loginRequest = new LoginRequest();
 
-        loginRequest.setEmail(DataFaker.empty());
-        loginRequest.setPassword(DataFaker.password());
+        loginRequest.setEmail(BaseDataFactory.empty());
+        loginRequest.setPassword(BaseDataFactory.password());
 
         return loginRequest;
     }
@@ -63,8 +58,8 @@ public class LoginDataFactory {
 
         LoginRequest loginRequest = new LoginRequest();
 
-        loginRequest.setEmail(DataFaker.email());
-        loginRequest.setPassword(DataFaker.empty());
+        loginRequest.setEmail(BaseDataFactory.email());
+        loginRequest.setPassword(BaseDataFactory.empty());
 
         return loginRequest;
     }
@@ -73,8 +68,8 @@ public class LoginDataFactory {
 
         LoginRequest loginRequest = new LoginRequest();
 
-        loginRequest.setEmail(DataFaker.empty());
-        loginRequest.setPassword(DataFaker.empty());
+        loginRequest.setEmail(BaseDataFactory.empty());
+        loginRequest.setPassword(BaseDataFactory.empty());
 
         return loginRequest;
     }

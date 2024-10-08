@@ -1,6 +1,7 @@
 package br.com.rest.tests.users;
 
 import br.com.rest.client.UsersClient;
+import br.com.rest.data.factory.BaseDataFactory;
 import br.com.rest.data.factory.UsersDataFactory;
 import br.com.rest.model.request.UsersRequest;
 import br.com.rest.model.response.UsersResponse;
@@ -62,7 +63,7 @@ public class PutUsersTest {
 
         usersRequest = UsersDataFactory.createUser();
 
-        Response response = usersClient.usersPut(UsersDataFactory.name(), usersRequest)
+        Response response = usersClient.usersPut(BaseDataFactory.name(), usersRequest)
                 .then()
                     .extract()
                         .response()

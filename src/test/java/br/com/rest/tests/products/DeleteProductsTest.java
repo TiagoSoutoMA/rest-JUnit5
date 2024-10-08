@@ -2,6 +2,7 @@ package br.com.rest.tests.products;
 
 import br.com.rest.client.LoginClient;
 import br.com.rest.client.ProdutctsClient;
+import br.com.rest.data.factory.BaseDataFactory;
 import br.com.rest.data.factory.LoginDataFactory;
 import br.com.rest.data.factory.ProductsDataFactory;
 import br.com.rest.model.request.LoginRequest;
@@ -41,6 +42,7 @@ public class DeleteProductsTest {
     }
 
     @Test
+    @Order(1)
     @DisplayName("CE001 - Validate product deletion successfully")
     @Tag("functional")
     public void testDeleteProductSucessfully() {
@@ -61,11 +63,12 @@ public class DeleteProductsTest {
     }
 
     @Test
+    @Order(2)
     @DisplayName("CE002 - Attempt to validate the deletion of a product that is part of the cart")
     @Tag("functional")
     public void testDeleteProductIsPartCart() {
 
-        Response response = produtctsClient.productsDelete(token, ProductsDataFactory.idProductCart())
+        Response response = produtctsClient.productsDelete(token, BaseDataFactory.idProductCartProp())
                 .then()
                     .extract()
                         .response()
@@ -81,11 +84,12 @@ public class DeleteProductsTest {
     }
 
     @Test
+    @Order(3)
     @DisplayName("CE003 - Attempt to validate the deletion of a product with invalid id")
     @Tag("functional")
     public void testDeleteProductInvalidId() {
 
-        Response response = produtctsClient.productsDelete(token, ProductsDataFactory.name())
+        Response response = produtctsClient.productsDelete(token, BaseDataFactory.name())
                 .then()
                     .extract()
                         .response()

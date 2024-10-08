@@ -1,6 +1,7 @@
 package br.com.rest.tests.users;
 
 import br.com.rest.client.UsersClient;
+import br.com.rest.data.factory.BaseDataFactory;
 import br.com.rest.data.factory.UsersDataFactory;
 import br.com.rest.model.request.UsersRequest;
 import br.com.rest.model.response.UsersResponse;
@@ -93,7 +94,7 @@ public class GetUsersTest {
     @Tag("functional")
     public void testListUsersWithEmptyId() {
 
-        Response response = usersClient.usersIdGet(UsersDataFactory.empty())
+        Response response = usersClient.usersIdGet(BaseDataFactory.empty())
                 .then()
                     .extract()
                         .response()
@@ -123,7 +124,7 @@ public class GetUsersTest {
     @Tag("functional")
     public void testListUsersWithInvalidId() {
 
-        Response response = usersClient.usersIdGet(UsersDataFactory.name())
+        Response response = usersClient.usersIdGet(BaseDataFactory.name())
                 .then()
                     .extract()
                         .response()

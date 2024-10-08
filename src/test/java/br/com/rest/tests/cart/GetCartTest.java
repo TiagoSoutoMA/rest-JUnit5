@@ -1,6 +1,7 @@
 package br.com.rest.tests.cart;
 
 import br.com.rest.client.CartClient;
+import br.com.rest.data.factory.BaseDataFactory;
 import br.com.rest.data.factory.CartDataFactory;
 import br.com.rest.model.request.CartRequest;
 import br.com.rest.model.response.CartResponse;
@@ -42,7 +43,7 @@ public class GetCartTest {
     @Tag("functional")
     public void testListCartByIdSucessfully() {
 
-        Response response = cartClient.cartIdGet(CartDataFactory.idCarrinho())
+        Response response = cartClient.cartIdGet(BaseDataFactory.idCarrinhoProp())
                 .then()
                     .extract()
                         .response()
@@ -62,7 +63,7 @@ public class GetCartTest {
     @Tag("functional")
     public void testListCartIncorrectId() {
 
-        Response response = cartClient.cartIdGet(CartDataFactory.name())
+        Response response = cartClient.cartIdGet(BaseDataFactory.name())
                 .then()
                     .extract()
                         .response()

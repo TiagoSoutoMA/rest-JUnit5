@@ -4,10 +4,7 @@ import br.com.rest.client.CartClient;
 import br.com.rest.client.LoginClient;
 import br.com.rest.client.ProdutctsClient;
 import br.com.rest.client.UsersClient;
-import br.com.rest.data.factory.CartDataFactory;
-import br.com.rest.data.factory.LoginDataFactory;
-import br.com.rest.data.factory.ProductsDataFactory;
-import br.com.rest.data.factory.UsersDataFactory;
+import br.com.rest.data.factory.*;
 import br.com.rest.model.request.CartRequest;
 import br.com.rest.model.request.LoginRequest;
 import br.com.rest.model.request.ProductsRequest;
@@ -106,7 +103,7 @@ public class PostCartTest {
     @Tag("functional")
     public void testCreateCartIncorrectId() {
 
-        cartRequest = CartDataFactory.createCartIncorrectId(CartDataFactory.name(), quantityProduct);
+        cartRequest = CartDataFactory.createCartIncorrectId(BaseDataFactory.name(), quantityProduct);
 
         Response response = cartClient.cartPost(token, cartRequest)
                 .then()

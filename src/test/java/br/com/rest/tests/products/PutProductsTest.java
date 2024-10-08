@@ -3,6 +3,7 @@ package br.com.rest.tests.products;
 import br.com.rest.client.LoginClient;
 import br.com.rest.client.ProdutctsClient;
 import br.com.rest.client.UsersClient;
+import br.com.rest.data.factory.BaseDataFactory;
 import br.com.rest.data.factory.LoginDataFactory;
 import br.com.rest.data.factory.ProductsDataFactory;
 import br.com.rest.data.factory.UsersDataFactory;
@@ -82,7 +83,7 @@ public class PutProductsTest {
 
         productsRequest = ProductsDataFactory.createProduct();
 
-        Response response = produtctsClient.productsPut(token, ProductsDataFactory.name(), productsRequest)
+        Response response = produtctsClient.productsPut(token, BaseDataFactory.name(), productsRequest)
                 .then()
                     .extract()
                         .response()

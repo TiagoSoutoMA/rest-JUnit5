@@ -70,7 +70,6 @@ public class ProdutctsClient extends BaseClient {
 
                 given()
                         .spec(super.set())
-                        .contentType(ContentType.JSON)
                         .header("Authorization", token)
                         .pathParam("id", id)
                 .when()

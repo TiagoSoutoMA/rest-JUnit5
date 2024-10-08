@@ -70,7 +70,6 @@ public class UsersClient extends BaseClient {
 
                 given()
                         .spec(set())
-                        .contentType(ContentType.JSON)
                         .pathParam("id", id)
                 .when()
                         .delete(USERS_ID)

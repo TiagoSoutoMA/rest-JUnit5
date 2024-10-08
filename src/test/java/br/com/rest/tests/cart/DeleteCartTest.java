@@ -137,7 +137,7 @@ public class DeleteCartTest {
     @Tag("functional")
     public void testCompletePurchaseNoToken() {
 
-        Response response = cartClient.cartDeleteConclude(CartDataFactory.empty())
+        Response response = cartClient.cartDeleteConclude(BaseDataFactory.empty())
                 .then()
                     .extract()
                         .response()
@@ -197,7 +197,7 @@ public class DeleteCartTest {
     @Tag("functional")
     public void testCancelPurchaseNoToken() {
 
-        Response response = cartClient.cartDeleteCancel(CartDataFactory.empty())
+        Response response = cartClient.cartDeleteCancel(BaseDataFactory.empty())
                 .then()
                     .extract()
                         .response()

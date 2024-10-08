@@ -6,8 +6,6 @@ import io.restassured.config.LogConfig;
 import io.restassured.config.RestAssuredConfig;
 import io.restassured.specification.RequestSpecification;
 
-import static io.qameta.allure.Allure.step;
-
 public class BaseClient {
 
     public final String BASE_URI = "http://localhost:3000";

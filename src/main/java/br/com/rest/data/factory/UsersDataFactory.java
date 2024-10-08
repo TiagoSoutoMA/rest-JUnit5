@@ -1,35 +1,31 @@
 package br.com.rest.data.factory;
 
 import br.com.rest.model.request.UsersRequest;
-import br.com.rest.utils.Manipulation;
-import org.apache.commons.lang3.StringUtils;
-
-import java.util.Properties;
 
 public class UsersDataFactory {
-
-    private static Properties prop = Manipulation.getProp();
 
     public static UsersRequest createUserAdmin() {
 
         UsersRequest usersRequest = new UsersRequest();
 
-        usersRequest.setNome(DataFaker.name());
-        usersRequest.setEmail(DataFaker.email());
-        usersRequest.setPassword(DataFaker.password());
-        usersRequest.setAdministrador("true");
+        usersRequest.setNome(BaseDataFactory.name());
+        usersRequest.setEmail(BaseDataFactory.email());
+        usersRequest.setPassword(BaseDataFactory.password());
+        usersRequest.setAdministrador(String.valueOf(Boolean.TRUE));
 
         return usersRequest;
     }
+
+    public static UsersRequest user() { return createUser(); }
 
     public static UsersRequest createUser() {
 
         UsersRequest usersRequest = new UsersRequest();
 
-        usersRequest.setNome(DataFaker.name());
-        usersRequest.setEmail(DataFaker.email());
-        usersRequest.setPassword(DataFaker.password());
-        usersRequest.setAdministrador(DataFaker.isAdmin());
+        usersRequest.setNome(BaseDataFactory.name());
+        usersRequest.setEmail(BaseDataFactory.email());
+        usersRequest.setPassword(BaseDataFactory.password());
+        usersRequest.setAdministrador(BaseDataFactory.isAdmin());
 
         return usersRequest;
     }
@@ -38,101 +34,74 @@ public class UsersDataFactory {
 
         UsersRequest usersRequest = new UsersRequest();
 
-        usersRequest.setNome(StringUtils.EMPTY);
-        usersRequest.setEmail(StringUtils.EMPTY);
-        usersRequest.setPassword(StringUtils.EMPTY);
-        usersRequest.setAdministrador(StringUtils.EMPTY);
+        usersRequest.setNome(BaseDataFactory.empty());
+        usersRequest.setEmail(BaseDataFactory.empty());
+        usersRequest.setPassword(BaseDataFactory.empty());
+        usersRequest.setAdministrador(BaseDataFactory.empty());
 
         return usersRequest;
     }
 
     public static UsersRequest createUserWithEmptyName() {
 
-        UsersRequest usersRequest = new UsersRequest();
+        UsersRequest usersRequest = user();
 
-        usersRequest.setNome(StringUtils.EMPTY);
-        usersRequest.setEmail(DataFaker.email());
-        usersRequest.setPassword(DataFaker.password());
-        usersRequest.setAdministrador(DataFaker.isAdmin());
+        usersRequest.setNome(BaseDataFactory.empty());
 
         return usersRequest;
     }
 
     public static UsersRequest createUserWithEmptyEmail() {
 
-        UsersRequest usersRequest = new UsersRequest();
+        UsersRequest usersRequest = user();
 
-        usersRequest.setNome(DataFaker.name());
-        usersRequest.setEmail(StringUtils.EMPTY);
-        usersRequest.setPassword(DataFaker.password());
-        usersRequest.setAdministrador(DataFaker.isAdmin());
+        usersRequest.setEmail(BaseDataFactory.empty());
 
         return usersRequest;
     }
 
     public static UsersRequest createUserWithEmptyPassword() {
 
-        UsersRequest usersRequest = new UsersRequest();
+        UsersRequest usersRequest = user();
 
-        usersRequest.setNome(DataFaker.name());
-        usersRequest.setEmail(DataFaker.email());
-        usersRequest.setPassword(StringUtils.EMPTY);
-        usersRequest.setAdministrador(DataFaker.isAdmin());
+        usersRequest.setPassword(BaseDataFactory.empty());
 
         return usersRequest;
     }
 
     public static UsersRequest createUserWithEmptyAdministrator() {
 
-        UsersRequest usersRequest = new UsersRequest();
+        UsersRequest usersRequest = user();
 
-        usersRequest.setNome(DataFaker.name());
-        usersRequest.setEmail(DataFaker.email());
-        usersRequest.setPassword(DataFaker.password());
-        usersRequest.setAdministrador(StringUtils.EMPTY);
+        usersRequest.setAdministrador(BaseDataFactory.empty());
 
         return usersRequest;
     }
 
     public static UsersRequest createUserWithInvalidEmail() {
 
-        UsersRequest usersRequest = new UsersRequest();
+        UsersRequest usersRequest = user();
 
-        usersRequest.setNome(DataFaker.name());
-        usersRequest.setEmail(DataFaker.invalidEmail());
-        usersRequest.setPassword(DataFaker.password());
-        usersRequest.setAdministrador(DataFaker.isAdmin());
+        usersRequest.setEmail(BaseDataFactory.invalidEmail());
 
         return usersRequest;
     }
 
     public static UsersRequest createUserWithInvalidAdministrator() {
 
-        UsersRequest usersRequest = new UsersRequest();
+        UsersRequest usersRequest = user();
 
-        usersRequest.setNome(DataFaker.name());
-        usersRequest.setEmail(DataFaker.invalidEmail());
-        usersRequest.setPassword(DataFaker.password());
-        usersRequest.setAdministrador(DataFaker.name());
+        usersRequest.setAdministrador(BaseDataFactory.name());
 
         return usersRequest;
     }
 
     public static UsersRequest createUserWithDuplicatedEmail() {
 
-        UsersRequest usersRequest = new UsersRequest();
+        UsersRequest usersRequest = user();
 
-        usersRequest.setNome(DataFaker.name());
-        usersRequest.setEmail(prop.getProperty("email"));
-        usersRequest.setPassword(DataFaker.password());
-        usersRequest.setAdministrador(DataFaker.isAdmin());
+        usersRequest.setEmail(BaseDataFactory.emailProp());
 
         return usersRequest;
     }
-
-    public static String empty() { return DataFaker.empty(); }
-
-    public static String name() { return DataFaker.name(); }
-
-    public static String idAdmin() { return prop.getProperty("id"); }
 }
